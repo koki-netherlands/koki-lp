@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オランダ移住 実務伴走 | Koki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy:        #1e2d4a;
+    --navy-mid:    #2a3f62;
+    --navy-soft:   #3a5278;
+    --terra:       #c4622d;
+    --terra-light: #d4784a;
+    --terra-pale:  #f2e8e1;
+    --cream:       #f7f4ef;
+    --white:       #ffffff;
+    --text:        #1e1e1e;
+    --text-mid:    #444;
+    --text-sub:    #666;
+    --border:      #e2ddd8;
+    --border-soft: #ece8e3;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.85;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== UTILS ===== */
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; }
+  .section { padding: 72px 0; }
+  .section-sm { padding: 56px 0; }
+
+  .label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--terra);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--navy);
+    margin-bottom: 20px;
+  }
+  h2 .accent { color: var(--terra); }
+
+  p { color: var(--text-sub); font-size: 15px; line-height: 1.9; margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  hr { border: none; border-top: 1px solid var(--border-soft); }
+
+  /* ===== CTA BUTTON ===== */
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--terra);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    letter-spacing: 0.03em;
+    width: 100%;
+  }
+  .btn-primary:hover { background: var(--terra-light); transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-arrow { font-size: 18px; }
+
+  .cta-support {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .cta-support span {
+    font-size: 13px;
+    color: var(--text-sub);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .cta-support span::before {
+    content: "✓";
+    color: var(--terra);
+    font-weight: 700;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--navy);
+    padding: 80px 0 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(196,98,45,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, rgba(58,82,120,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 40px;
+    padding: 7px 18px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.1em;
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow-dot {
+    width: 6px; height: 6px;
+    background: var(--terra-light);
+    border-radius: 50%;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 0 4px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: #f5b07a;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin: 0 auto 36px;
+    max-width: 420px;
+    line-height: 1.9;
+  }
+  .hero-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+    text-align: left;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+  }
+  .hero-feature-check {
+    color: #f5b07a;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .hero-cta-wrap {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .hero-cta-wrap .cta-support span { color: rgba(255,255,255,0.45); }
+  .hero-cta-wrap .cta-support span::before { color: rgba(245,176,122,0.7); }
+
+  /* ===== PAIN ===== */
+  .pain-bg { background: var(--cream); }
+
+  .pain-list { list-style: none; }
+  .pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+  .pain-list li:last-child { border-bottom: none; }
+  .pain-check {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--terra-pale);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 11px;
+    color: var(--terra);
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  /* ===== SERVICE ===== */
+  .service-intro {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 24px 20px;
+    margin-bottom: 24px;
+  }
+  .service-intro p {
+    color: rgba(255,255,255,0.75);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.85;
+  }
+  .service-intro strong { color: #f5b07a; font-weight: 700; }
+
+  .service-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+  .service-item-icon {
+    color: var(--terra);
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ===== 90 DAYS ===== */
+  .days-bg { background: var(--cream); }
+  .days-box {
+    background: var(--navy);
+    border-radius: 10px;
+    padding: 32px 24px;
+  }
+  .days-box-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #f5b07a;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .days-box h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .days-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 22px;
+    padding: 10px 14px;
+    border-left: 3px solid rgba(245,176,122,0.4);
+    line-height: 1.7;
+  }
+  .days-list { list-style: none; }
+  .days-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.6;
+  }
+  .days-list li:last-child { border-bottom: none; }
+  .days-arrow { color: #f5b07a; flex-shrink: 0; font-weight: 700; }
+
+  /* ===== PROFILE ===== */
+  .profile-bg { background: var(--cream); }
+  .profile-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .profile-header {
+    background: var(--navy);
+    padding: 28px 24px;
+  }
+  .profile-name-en {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .profile-name-ja {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .ptag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .profile-body { padding: 24px; }
+  .profile-lead {
+    font-size: 15px;
+    color: var(--text-mid);
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .strength-list { list-style: none; }
+  .strength-list li {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-soft);
+    align-items: flex-start;
+  }
+  .strength-list li:last-child { border-bottom: none; }
+  .str-icon {
+    width: 30px; height: 30px;
+    background: var(--terra-pale);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .str-content {}
+  .str-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .str-desc { font-size: 13px; color: var(--text-sub); line-height: 1.7; margin: 0; }
+
+  /* ===== WHO ===== */
+  .who-list { list-style: none; }
+  .who-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+  .who-list li:last-child { border-bottom: none; }
+  .who-dot {
+    color: var(--terra);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ===== LOSS ===== */
+  .loss-bg { background: var(--navy); }
+  .loss-bg h2 { color: #fff; }
+  .loss-intro {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+  }
+  .loss-cards { display: grid; gap: 12px; }
+  .loss-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .loss-card-q {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(245,176,122,0.9);
+    margin-bottom: 6px;
+  }
+  .loss-card-a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.75;
+    margin: 0;
+  }
+  .loss-bottom {
+    margin-top: 24px;
+    padding: 16px 18px;
+    background: rgba(196,98,45,0.15);
+    border-left: 3px solid var(--terra-light);
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.75;
+  }
+
+  /* ===== FLOW ===== */
+  .flow-bg { background: var(--cream); }
+  .flow-steps { display: flex; flex-direction: column; }
+  .flow-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .flow-step:last-child { border-bottom: none; }
+  .flow-num {
+    width: 38px; height: 38px;
+    background: var(--navy);
+    color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .flow-content h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+    line-height: 1.5;
+  }
+  .flow-content p { font-size: 13px; margin: 0; }
+
+  /* ===== PLANS ===== */
+  .plans-intro {
+    background: var(--terra-pale);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    border-left: 3px solid var(--terra);
+  }
+  .plans { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .plan-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 20px;
+    background: var(--white);
+    position: relative;
+  }
+  .plan-card.featured {
+    border: 2px solid var(--terra);
+  }
+  .plan-badge {
+    position: absolute;
+    top: -12px; left: 20px;
+    background: var(--terra);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+  }
+  .plan-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .plan-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .plan-tagline {
+    font-size: 12px;
+    color: var(--terra);
+    font-weight: 700;
+  }
+  .plan-desc { font-size: 14px; color: var(--text-sub); margin-bottom: 12px; line-height: 1.75; }
+  .plan-price-note {
+    font-size: 12px;
+    color: #aaa;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+  }
+  .plans-cta {
+    margin-top: 28px;
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .plans-cta p {
+    font-size: 14px;
+    color: var(--text-sub);
+    margin-bottom: 16px;
+  }
+
+  /* ===== DELIVERABLES ===== */
+  .deliver-bg { background: var(--cream); }
+  .deliver-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .deliver-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 14px;
+    font-size: 13px;
+    color: var(--text-mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.6;
+  }
+  .deliver-check { color: var(--terra); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  /* ===== DISCLAIMER ===== */
+  .dis-box {
+    background: #f4f2ef;
+    border-radius: 8px;
+    padding: 22px 20px;
+    border: 1px solid var(--border);
+  }
+  .dis-list { list-style: none; }
+  .dis-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 1.6;
+  }
+  .dis-list li:last-child { border-bottom: none; }
+  .dis-x { color: #bbb; font-weight: 700; flex-shrink: 0; }
+
+  /* ===== FAQ ===== */
+  .faq-list { }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-q-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 4px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .faq-q-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--terra);
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-family: 'Noto Serif JP', serif;
+  }
+  .faq-q-text {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .faq-toggle {
+    color: var(--text-sub);
+    font-size: 18px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    line-height: 1;
+    margin-top: 3px;
+  }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); color: var(--terra); }
+  .faq-a {
+    display: none;
+    padding: 0 4px 18px 36px;
+    font-size: 14px;
+    color: var(--text-sub);
+    line-height: 1.85;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ===== FINAL CTA ===== */
+  .final-cta {
+    background: var(--navy);
+    padding: 80px 0;
+    text-align: center;
+  }
+  .final-cta h2 {
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+  .final-cta h2 em {
+    font-style: normal;
+    color: #f5b07a;
+  }
+  .final-cta-lead {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    max-width: 440px;
+    margin: 0 auto 36px;
+    line-height: 1.9;
+  }
+  .final-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 340px;
+    margin: 0 auto 32px;
+    text-align: left;
+  }
+  .final-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.75);
+  }
+  .final-step-num {
+    width: 26px; height: 26px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    flex-shrink: 0;
+  }
+  .final-cta-wrap {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .final-cta-wrap .cta-support span { color: rgba(255,255,255,0.4); }
+  .final-cta-wrap .cta-support span::before { color: rgba(245,176,122,0.6); }
+  .final-hr {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 48px auto 0;
+    max-width: 200px;
+  }
+  .final-footer-note {
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+  }
+
+  /* ===== MID CTA BANNER ===== */
+  .mid-cta {
+    background: var(--terra-pale);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 0;
+    text-align: center;
+  }
+  .mid-cta p { font-size: 15px; color: var(--text-mid); margin-bottom: 20px; font-weight: 500; }
+  .mid-cta-wrap { max-width: 360px; margin: 0 auto; }
+
+  @media (max-width: 400px) {
+    .hero h1 { font-size: 25px; }
+    h2 { font-size: 22px; }
+    .deliver-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      オランダ移住を考えている日本人・単身・フリーランスビザ前提
+    </div>
+    <h1>
+      オランダ移住、<em>何から<br>始めればいいか</em><br>分からない方へ。
+    </h1>
+    <p class="hero-sub">
+      フリーランスビザの準備から、家探し・各種手続き・<br>
+      現地の生活立ち上げまで——<br>
+      順番を整理しながら、一緒に前に進めます。
+    </p>
+    <div class="hero-features">
+      <div class="hero-feature">
+        <span class="hero-feature-check">✓</span>
+        <span>今の状況整理から、優先ToDoを一緒に作る</span>
+      </div>
+      <div class="hero-feature">
+        <span class="hero-feature-check">✓</span>
+        <span>BSN・KvK・銀行・保険の流れを順番で整理</span>
+      </div>
+      <div class="hero-feature">
+        <span class="hero-feature-check">✓</span>
+        <span>仕事がまだ決まっていなくても対応できる</span>
+      </div>
+      <div class="hero-feature">
+        <span class="hero-feature-check">✓</span>
+        <span>来た後の「本当にやっていけるか」にも向き合う</span>
+      </div>
+    </div>
+    <div class="hero-cta-wrap">
+      <a class="btn-primary" href="https://ig.me/m/koki.overseas" target="_blank">
+        DMで「移住相談」と送ってみる
+        <span class="btn-arrow">→</span>
+      </a>
+      <div class="cta-support">
+        <span>無料・30分Zoom相談まで完全無料</span>
+        <span>強引な勧誘は一切しません</span>
+        <span>まず状況整理だけでもOK</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAIN ===== -->
+<section class="section pain-bg">
+  <div class="wrap">
+    <span class="label">Worries</span>
+    <h2>こんな悩み、<br>ありませんか？</h2>
+    <ul class="pain-list">
+      <li>
+        <span class="pain-check">?</span>
+        オランダ移住を考えているが、何から手をつければいいか分からない
+      </li>
+      <li>
+        <span class="pain-check">?</span>
+        フリーランスビザの条件や順番が曖昧で、調べても確信が持てない
+      </li>
+      <li>
+        <span class="pain-check">?</span>
+        住民登録できる家をどう探せばいいか分からない
+      </li>
+      <li>
+        <span class="pain-check">?</span>
+        BSN・DigiD・KvK・銀行・保険の流れがよく分からない
+      </li>
+      <li>
+        <span class="pain-check">?</span>
+        仕事がまだ固まっておらず、来てからの生活が成り立つか不安
+      </li>
+      <li>
+        <span class="pain-check">?</span>
+        情報が多すぎて、自分に当てはまるものが選べない
+      </li>
+      <li>
+        <span class="pain-check">?</span>
+        間違った順番で進めて、時間もお金もムダにしたくない
+      </li>
+      <li>
+        <span class="pain-check">?</span>
+        30代以降でも、現実的な海外移住ルートがあるのか知りたい
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== SERVICE ===== -->
+<section class="section">
+  <div class="wrap">
+    <span class="label">What We Do</span>
+    <h2>このサービスで<br>できること</h2>
+    <div class="service-intro">
+      <p>
+        これはビザ代行ではありません。<br>
+        <strong>「何を、どの順番で進めれば移住が現実になるか」</strong>を整理し、<br>
+        移住前後の実務を一緒に前に進める伴走サービスです。
+      </p>
+    </div>
+    <div class="service-grid">
+      <div class="service-item">
+        <span class="service-item-icon">→</span>
+        今の状況整理・フリーランスビザ準備の方向性確認
+      </div>
+      <div class="service-item">
+        <span class="service-item-icon">→</span>
+        優先順位つきToDo整理・必要書類の確認
+      </div>
+      <div class="service-item">
+        <span class="service-item-icon">→</span>
+        ビジネスプラン骨子整理
+      </div>
+      <div class="service-item">
+        <span class="service-item-icon">→</span>
+        家探しの進め方・条件整理、応募文面テンプレ共有
+      </div>
+      <div class="service-item">
+        <span class="service-item-icon">→</span>
+        住民登録 / BSN / DigiD / KvK / 銀行 / 保険の順番整理
+      </div>
+      <div class="service-item">
+        <span class="service-item-icon">→</span>
+        申請前の不足確認・到着後30日の行動設計
+      </div>
+      <div class="service-item">
+        <span class="service-item-icon">→</span>
+        来た後の生活立ち上げ相談
+      </div>
+      <div class="service-item">
+        <span class="service-item-icon">→</span>
+        仕事がまだ固まっていない人向けの初動整理
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 90 DAYS ===== -->
+<section class="section-sm days-bg">
+  <div class="wrap">
+    <span class="label">90-Day Support</span>
+    <h2>90日間で、<br>何が前に進むのか</h2>
+    <div class="days-box">
+      <div class="days-box-label">主力サポートの内容</div>
+      <h3>申請前後の実務を順番で整理し、<br>移住を現実に近づける90日間</h3>
+      <div class="days-note">
+        ビザ取得の結果を保証するものではありません。「整理と前進」に特化したサポートです。
+      </div>
+      <ul class="days-list">
+        <li><span class="days-arrow">→</span> 今の状況整理・優先順位づけ</li>
+        <li><span class="days-arrow">→</span> フリーランスビザ準備の方向性確認と必要書類整理</li>
+        <li><span class="days-arrow">→</span> ビジネスプラン骨子整理</li>
+        <li><span class="days-arrow">→</span> 家探し方針・条件整理・応募文面テンプレ共有</li>
+        <li><span class="days-arrow">→</span> 住民登録 / BSN / DigiD / KvK / 銀行 / 保険の流れ整理</li>
+        <li><span class="days-arrow">→</span> 申請前の不足確認</li>
+        <li><span class="days-arrow">→</span> 到着後30日の行動設計</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROFILE ===== -->
+<section class="section profile-bg">
+  <div class="wrap">
+    <span class="label">Why Koki</span>
+    <h2>なぜKokiに<br>頼むべきか</h2>
+    <div class="profile-card">
+      <div class="profile-header">
+        <div class="profile-name-en">Your Guide</div>
+        <div class="profile-name-ja">Koki</div>
+        <div style="font-size:13px; color:rgba(255,255,255,0.55); margin-bottom: 4px;">オランダ在住 / 個人事業主 / 移住実務伴走</div>
+        <div class="profile-tags">
+          <span class="ptag">カナダ 1.5年</span>
+          <span class="ptag">オーストラリア 3年</span>
+          <span class="ptag">オランダ在住</span>
+        </div>
+      </div>
+      <div class="profile-body">
+        <p class="profile-lead">
+          制度を「知っている」人ではなく、<br>
+          実際に海外でゼロから暮らしを作ってきた人間です。
+        </p>
+        <ul class="strength-list">
+          <li>
+            <div class="str-icon">🏠</div>
+            <div class="str-content">
+              <p class="str-title">毎回「家なし・仕事なし」から始めてきた</p>
+              <p class="str-desc">カナダ・オーストラリア・オランダ、それぞれゼロから現地の暮らしを作ってきた。だから「来た後に本当にやっていけるか」という不安に、現実ベースで向き合える。</p>
+            </div>
+          </li>
+          <li>
+            <div class="str-icon">💼</div>
+            <div class="str-content">
+              <p class="str-title">複数職種で生活をつないできた経験がある</p>
+              <p class="str-desc">飲食・カジノディーラー・建設など、仕事がまだ固まっていない状態からの「初動」を知っている。不確定な状況の整理が得意。</p>
+            </div>
+          </li>
+          <li>
+            <div class="str-icon">🍡</div>
+            <div class="str-content">
+              <p class="str-title">自分で仕事を作った経験がある</p>
+              <p class="str-desc">ワーホリ中、たこ焼き屋をゼロから立ち上げて1年以上運営。「仕事を作る」という動きのリアルを知っている。</p>
+            </div>
+          </li>
+          <li>
+            <div class="str-icon">🇳🇱</div>
+            <div class="str-content">
+              <p class="str-title">オランダ到着後2週間で家を2件決めた</p>
+              <p class="str-desc">渡航前に仕事を確定させ、到着後の動きを設計していた。家探し・生活立ち上げの実務を体で知っている。</p>
+            </div>
+          </li>
+          <li>
+            <div class="str-icon">📋</div>
+            <div class="str-content">
+              <p class="str-title">ビザ・タックスリターンを自分でやってきた</p>
+              <p class="str-desc">他国のビザ申請・手続きを自力で処理。制度の話だけでなく、実務の流れを知っている。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHO ===== -->
+<section class="section">
+  <div class="wrap">
+    <span class="label">For Who</span>
+    <h2>こんな人に<br>向いています</h2>
+    <ul class="who-list">
+      <li>
+        <span class="who-dot">◎</span>
+        20代後半〜30代後半で、オランダ移住を本気で考えている
+      </li>
+      <li>
+        <span class="who-dot">◎</span>
+        フリーランスビザ・個人事業主ビザで単身移住を考えている
+      </li>
+      <li>
+        <span class="who-dot">◎</span>
+        何から始めればいいか分からず、一人で調べ続けている
+      </li>
+      <li>
+        <span class="who-dot">◎</span>
+        仕事がまだ固まっていないが、動き出したい
+      </li>
+      <li>
+        <span class="who-dot">◎</span>
+        来た後の生活が成り立つか、正直不安がある
+      </li>
+      <li>
+        <span class="who-dot">◎</span>
+        ワーホリ年齢を過ぎても、現実的な海外移住ルートを探している
+      </li>
+      <li>
+        <span class="who-dot">◎</span>
+        自己投資の意欲があり、納得できれば投資できる
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== MID CTA ===== -->
+<div class="mid-cta">
+  <div class="wrap">
+    <p>まずは一言、送ってみるだけで大丈夫です。</p>
+    <div class="mid-cta-wrap">
+      <a class="btn-primary" href="https://ig.me/m/koki.overseas" target="_blank">
+        DMで「移住相談」と送る →
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LOSS ===== -->
+<section class="section loss-bg">
+  <div class="wrap">
+    <span class="label" style="color:#f5b07a;">Without Support</span>
+    <h2>一人で進めると、<br><span class="accent" style="color:#f5b07a;">どこで止まりやすいか</span></h2>
+    <p class="loss-intro">煽りではありません。実際に起きやすいことです。</p>
+    <div class="loss-cards">
+      <div class="loss-card">
+        <p class="loss-card-q">住民登録できない物件に入居してしまった場合</p>
+        <p class="loss-card-a">BSNが取れず、銀行・DigiD・保険、すべての手続きが止まる。最初の家選びが、その後の全工程に影響する。</p>
+      </div>
+      <div class="loss-card">
+        <p class="loss-card-q">ビザ申請のビジネスプランが不十分だった場合</p>
+        <p class="loss-card-a">審査が長引き、準備期間が大幅に延びる。「ちゃんと書いたつもり」が、通らない水準だったケースは少なくない。</p>
+      </div>
+      <div class="loss-card">
+        <p class="loss-card-q">各種手続きの順番が分からないまま進めた場合</p>
+        <p class="loss-card-a">到着後1〜2ヶ月、確認と修正に時間を費やす。「やり直し」は時間だけでなく、精神的なコストも大きい。</p>
+      </div>
+    </div>
+    <div class="loss-bottom">
+      相談の価値は「情報を増やすこと」ではありません。<br>
+      <strong style="color:#fff;">「正しい順番で、無駄なく前に進むこと」</strong>です。
+    </div>
+  </div>
+</section>
+
+<!-- ===== FLOW ===== -->
+<section class="section flow-bg">
+  <div class="wrap">
+    <span class="label">How It Works</span>
+    <h2>相談から、<br>サポート開始までの流れ</h2>
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h4>Instagram DM で「移住相談」と送る</h4>
+          <p>一言だけでOK。読んでから動けばいい、という気持ちで大丈夫です。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h4>簡単なヒアリング（DM）</h4>
+          <p>今の状況・移住の時期感・何が一番不安かをざっくり確認します。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h4>30分Zoom 無料相談</h4>
+          <p>現状を整理し、何が優先課題かを一緒に確認します。全額無料です。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-content">
+          <h4>個別提案資料の送付</h4>
+          <p>相談内容をもとに、あなたに合ったプランを個別に案内します。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <div class="flow-content">
+          <h4>納得してからサポート開始</h4>
+          <p>強引な勧誘は一切しません。納得できた場合のみ、申し込みをご検討ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLANS ===== -->
+<section class="section">
+  <div class="wrap">
+    <span class="label">Plans</span>
+    <h2>プランは3種類。<br>詳細は相談後に個別案内</h2>
+    <div class="plans-intro">
+      状況によって、合うプランは異なります。だからこそ、まず無料相談で現状を聞いてから、最適なプランを個別に提案します。「どれが自分に合うか」は、相談の中で一緒に整理できます。
+    </div>
+    <div class="plans">
+      <div class="plan-card">
+        <div class="plan-header">
+          <span class="plan-name">ライト</span>
+          <span class="plan-tagline">まず方向性を整理したい人に</span>
+        </div>
+        <p class="plan-desc">現状分析と優先ToDo整理が中心。「何から始めるか」が最初の課題の人向けの入口商品。</p>
+        <p class="plan-price-note">料金は無料相談後に個別案内</p>
+      </div>
+      <div class="plan-card featured">
+        <div class="plan-badge">一番選ばれています</div>
+        <div class="plan-header">
+          <span class="plan-name">スタンダード</span>
+          <span class="plan-tagline">移住前後を一通り伴走する主力プラン</span>
+        </div>
+        <p class="plan-desc">ビザ準備・家探し・各種手続き・到着後30日の行動設計まで、90日間かけて順番ごとに整理しながら進みます。一人で進めると止まりやすいポイントを、先回りして潰していくプランです。</p>
+        <p class="plan-price-note">料金は無料相談後に個別案内</p>
+      </div>
+      <div class="plan-card">
+        <div class="plan-header">
+          <span class="plan-name">プレミアム</span>
+          <span class="plan-tagline">より手厚い伴走を希望する方に</span>
+        </div>
+        <p class="plan-desc">優先対応・より深い伴走を希望する方向け。個別性の高い状況にも対応します。</p>
+        <p class="plan-price-note">料金は無料相談後に個別案内</p>
+      </div>
+    </div>
+    <div class="plans-cta">
+      <p>「どれが自分に合うか分からない」という方こそ、<br>まず無料相談でお話しください。</p>
+      <a class="btn-primary" href="https://ig.me/m/koki.overseas" target="_blank">
+        まずDMで「移住相談」と送る →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DELIVERABLES ===== -->
+<section class="section deliver-bg">
+  <div class="wrap">
+    <span class="label">What You Get</span>
+    <h2>サポート後に<br>手元に残るもの</h2>
+    <div class="deliver-grid">
+      <div class="deliver-item">
+        <span class="deliver-check">✓</span>
+        今の状況整理レポート
+      </div>
+      <div class="deliver-item">
+        <span class="deliver-check">✓</span>
+        優先順位つきToDo一覧
+      </div>
+      <div class="deliver-item">
+        <span class="deliver-check">✓</span>
+        申請前チェックリスト
+      </div>
+      <div class="deliver-item">
+        <span class="deliver-check">✓</span>
+        実務ロードマップ
+      </div>
+      <div class="deliver-item">
+        <span class="deliver-check">✓</span>
+        渡航後30日アクションプラン
+      </div>
+      <div class="deliver-item">
+        <span class="deliver-check">✓</span>
+        ビジネスプラン骨子
+      </div>
+      <div class="deliver-item">
+        <span class="deliver-check">✓</span>
+        家探し応募テンプレ
+      </div>
+      <div class="deliver-item">
+        <span class="deliver-check">✓</span>
+        手続き順番整理資料
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DISCLAIMER ===== -->
+<section class="section-sm">
+  <div class="wrap">
+    <span class="label">Not Included</span>
+    <h2>含まれないもの<br><span style="font-size:16px; font-family:'Noto Sans JP',sans-serif; font-weight:400; color:var(--text-sub);">（誠実な注記）</span></h2>
+    <div class="dis-box">
+      <ul class="dis-list">
+        <li><span class="dis-x">×</span> 代理申請・書類の代行提出</li>
+        <li><span class="dis-x">×</span> ビザ取得の結果保証</li>
+        <li><span class="dis-x">×</span> 住居の確約</li>
+        <li><span class="dis-x">×</span> 法務・税務の正式代理対応</li>
+        <li><span class="dis-x">×</span> 無制限の秘書的代行</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="wrap">
+    <span class="label">FAQ</span>
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q-row" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <span class="faq-q-text">仕事がまだ決まっていなくても相談できますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">はい、むしろそういった方が多いです。「仕事が決まっていない状態での初動整理」はこのサービスの中心テーマの一つ。まず現状を整理するところから始めます。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q-row" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <span class="faq-q-text">30代以降でも大丈夫ですか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">問題ありません。このサービスはフリーランスビザ前提の単身移住が対象で、年齢制限のあるワーホリとは別の選択肢です。30代・40代の方も対象です。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q-row" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <span class="faq-q-text">家探しはどこまで見てもらえますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">進め方・条件整理・応募文面テンプレートの共有まで対応します。物件の代理交渉・契約代行は含まれませんが、「何をどう探すか」の方針整理を一緒に進めます。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q-row" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <span class="faq-q-text">無料相談では何をしますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">今の状況・移住の時期感・一番の不安を30分で整理します。「今すぐ申し込んでください」という場ではありません。あなたに合ったプランを一緒に確認する場です。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q-row" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <span class="faq-q-text">相談後に必ず申し込む必要はありますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">ありません。無料相談は完全任意です。納得した場合のみ、プランをご検討ください。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q-row" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <span class="faq-q-text">ビザ代行会社との違いは何ですか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">ビザ代行会社は書類作成・代理申請が中心です。このサービスは「ビザ準備から現地での生活立ち上げまで」の実務全体を伴走するもの。仕事が固まっていない方や、来た後の生活に不安がある方に特に向いています。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q-row" onclick="toggleFaq(this)">
+          <span class="faq-q-label">Q.</span>
+          <span class="faq-q-text">90日でどこまで進みますか？</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <p class="faq-a">ビザ取得を保証するものではありません。状況整理・ビジネスプラン骨子・家探し方針・各種手続きの流れ整理・到着後30日の行動設計まで、移住実現に向けた実務を順番で前に進めることを目指します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ===== FINAL CTA ===== -->
+<section class="final-cta">
+  <div class="wrap">
+    <h2>まず、<em>「移住相談」</em>と<br>送ってみてください。</h2>
+    <p class="final-cta-lead">
+      長い文章を書く必要はありません。<br>
+      「移住相談」の一言で、話は始まります。<br>
+      まずは状況整理だけでもOKです。
+    </p>
+    <div class="final-steps">
+      <div class="final-step">
+        <span class="final-step-num">1</span>
+        Instagram DM で「移住相談」と送る
+      </div>
+      <div class="final-step">
+        <span class="final-step-num">2</span>
+        簡単なヒアリング（DM）
+      </div>
+      <div class="final-step">
+        <span class="final-step-num">3</span>
+        30分Zoom 無料相談
+      </div>
+    </div>
+    <div class="final-cta-wrap">
+      <a class="btn-primary" href="https://ig.me/m/koki.overseas" target="_blank">
+        Instagram で「移住相談」と送る →
+      </a>
+      <div class="cta-support">
+        <span>無料・Zoom相談まで完全無料</span>
+        <span>強引な勧誘は一切しません</span>
+        <span>状況整理だけでもOK</span>
+      </div>
+    </div>
+    <hr class="final-hr">
+    <p class="final-footer-note">© Koki — オランダ移住 実務伴走</p>
+  </div>
+</section>
+
+<script>
+  function toggleFaq(row) {
+    var item = row.parentElement;
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
