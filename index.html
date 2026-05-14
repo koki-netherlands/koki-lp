@@ -165,10 +165,10 @@
   }
   .hero-sub {
     font-size: 14px;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.68);
     margin: 0 auto 36px;
-    max-width: 420px;
-    line-height: 1.9;
+    max-width: 500px;
+    line-height: 1.95;
   }
   .hero-features {
     display: flex;
@@ -306,6 +306,66 @@
   }
   .days-list li:last-child { border-bottom: none; }
   .days-arrow { color: #f5b07a; flex-shrink: 0; font-weight: 700; }
+
+
+
+  /* ===== MISSION ===== */
+  .mission-bg { background: var(--white); }
+  .mission-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .mission-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: var(--terra);
+  }
+  .mission-lead {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.65;
+    color: var(--navy);
+    margin-bottom: 18px;
+  }
+  .mission-card p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.95;
+  }
+  .mission-note {
+    margin-top: 20px;
+    padding: 18px 18px;
+    background: var(--white);
+    border: 1px solid var(--border-soft);
+    border-left: 4px solid var(--terra);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.9;
+  }
+  .mission-note strong { color: var(--navy); }
+
+  .contact-email {
+    display: inline-block;
+    color: #fff;
+    background: rgba(196,98,45,0.92);
+    border: 1px solid rgba(245,176,122,0.7);
+    border-radius: 6px;
+    padding: 3px 8px;
+    margin-left: 3px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+  .contact-email:hover { background: var(--terra-light); }
+  .cta-support span.email-line::before { content: "✉"; }
 
   /* ===== PROFILE ===== */
   .profile-bg { background: var(--cream); }
@@ -522,6 +582,38 @@
     padding-top: 10px;
     border-top: 1px dashed var(--border);
   }
+  .plan-price {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 2px 0 10px;
+  }
+  .plan-best-for {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--terra);
+    margin-bottom: 10px;
+    line-height: 1.7;
+  }
+  .plan-points {
+    list-style: none;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+  }
+  .plan-points li {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.65;
+    padding: 4px 0;
+  }
+  .plan-points li::before {
+    content: "✓";
+    color: var(--terra);
+    font-weight: 700;
+    margin-right: 6px;
+  }
   .plans-cta {
     margin-top: 28px;
     background: var(--cream);
@@ -555,6 +647,62 @@
     line-height: 1.6;
   }
   .deliver-check { color: var(--terra); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+
+
+  /* ===== SINGLE SUPPORT ===== */
+  .single-bg { background: var(--cream); }
+  .single-intro {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--terra);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+  .single-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .single-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 18px;
+  }
+  .single-card.featured-single { border: 2px solid var(--terra); }
+  .single-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .single-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .single-price {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--terra);
+    white-space: nowrap;
+  }
+  .single-desc {
+    font-size: 13px;
+    color: var(--text-sub);
+    line-height: 1.75;
+    margin: 0;
+  }
+  .single-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--text-sub);
+    line-height: 1.8;
+  }
 
   /* ===== DISCLAIMER ===== */
   .dis-box {
@@ -779,32 +927,27 @@
   <div class="wrap">
     <div class="hero-eyebrow">
       <span class="hero-eyebrow-dot"></span>
-      オランダ移住を考えている日本人・単身・フリーランスビザ前提
+      オランダ移住を考えている日本人向け｜フリーランスビザ・生活立ち上げサポート
     </div>
     <h1>
-      オランダ移住、<em>何から<br>始めればいいか</em><br>分からない方へ。
+      オランダ移住を、<br><em>調べるだけで<br>止めたくない</em>方へ。
     </h1>
     <p class="hero-sub">
-      フリーランスビザの準備から、家探し・各種手続き・<br>
-      現地の生活立ち上げまで——<br>
-      順番を整理しながら、一緒に前に進めます。
+      2026年に自分でフリーランスビザを取得した実体験をもとに、<br>
+      ビザ準備・家探し・各種手続き・現地初動を、必要な順番で一緒に整理します。
     </p>
     <div class="hero-features">
       <div class="hero-feature">
         <span class="hero-feature-check">✓</span>
-        <span>今の状況整理から、優先ToDoを一緒に作る</span>
+        <span>今の状況から、次にやるべきことが明確になる</span>
       </div>
       <div class="hero-feature">
         <span class="hero-feature-check">✓</span>
-        <span>BSN・KvK・銀行・保険の流れを順番で整理</span>
+        <span>ビザ・家・BSN・KvK・銀行・保険の順番を整理できる</span>
       </div>
       <div class="hero-feature">
         <span class="hero-feature-check">✓</span>
-        <span>仕事がまだ決まっていなくても対応できる</span>
-      </div>
-      <div class="hero-feature">
-        <span class="hero-feature-check">✓</span>
-        <span>来た後の「本当にやっていけるか」にも向き合う</span>
+        <span>家探し・仕事探し・到着後の不安もまとめて相談できる</span>
       </div>
     </div>
     <div class="hero-cta-wrap">
@@ -815,7 +958,7 @@
       <div class="cta-support">
         <span>無料・30分Zoom相談まで完全無料</span>
         <span>強引な勧誘は一切しません</span>
-        <span>まず状況整理だけでもOK</span>
+        <span class="email-line">メールでも相談できます：<a class="contact-email" href="mailto:koki.netherlands@gmail.com">koki.netherlands@gmail.com</a></span>
       </div>
     </div>
   </div>
@@ -827,38 +970,12 @@
     <span class="label">Worries</span>
     <h2>こんな悩み、<br>ありませんか？</h2>
     <ul class="pain-list">
-      <li>
-        <span class="pain-check">?</span>
-        オランダ移住を考えているが、何から手をつければいいか分からない
-      </li>
-      <li>
-        <span class="pain-check">?</span>
-        フリーランスビザの条件や順番が曖昧で、調べても確信が持てない
-      </li>
-      <li>
-        <span class="pain-check">?</span>
-        住民登録できる家をどう探せばいいか分からない
-      </li>
-      <li>
-        <span class="pain-check">?</span>
-        BSN・DigiD・KvK・銀行・保険の流れがよく分からない
-      </li>
-      <li>
-        <span class="pain-check">?</span>
-        仕事がまだ固まっておらず、来てからの生活が成り立つか不安
-      </li>
-      <li>
-        <span class="pain-check">?</span>
-        情報が多すぎて、自分に当てはまるものが選べない
-      </li>
-      <li>
-        <span class="pain-check">?</span>
-        間違った順番で進めて、時間もお金もムダにしたくない
-      </li>
-      <li>
-        <span class="pain-check">?</span>
-        30代以降でも、現実的な海外移住ルートがあるのか知りたい
-      </li>
+      <li><span class="pain-check">?</span> オランダ移住を考えているが、何から始めればいいか分からない</li>
+      <li><span class="pain-check">?</span> フリーランスビザの準備・必要書類・順番に不安がある</li>
+      <li><span class="pain-check">?</span> 住民登録できる家をどう探せばいいか分からない</li>
+      <li><span class="pain-check">?</span> BSN・DigiD・KvK・銀行・保険の流れで止まりたくない</li>
+      <li><span class="pain-check">?</span> 仕事や収入がまだ固まっておらず、現地生活が不安</li>
+      <li><span class="pain-check">?</span> 間違った情報や順番で、時間もお金もムダにしたくない</li>
     </ul>
   </div>
 </section>
@@ -871,86 +988,42 @@
     <div class="service-intro">
       <p>
         これはビザ代行ではありません。<br>
-        <strong>「何を、どの順番で進めれば移住が現実になるか」</strong>を整理し、<br>
-        ビザ準備だけでなく、家探し・各種手続き・現地での生活立ち上げまで、実務ベースで伴走するサービスです。
+        <strong>移住準備・家探し・各種手続き・現地初動を、必要な順番で整理する実務伴走サービス</strong>です。
       </p>
     </div>
     <div class="service-grid">
-      <div class="service-item">
-        <span class="service-item-icon">→</span>
-        今の状況整理・フリーランスビザ準備の方向性確認
-      </div>
-      <div class="service-item">
-        <span class="service-item-icon">→</span>
-        優先順位つきToDo整理・必要書類の確認
-      </div>
-      <div class="service-item">
-        <span class="service-item-icon">→</span>
-        ビジネスプラン骨子整理
-      </div>
-      <div class="service-item">
-        <span class="service-item-icon">→</span>
-        家探しの進め方・条件整理・応募文面作成補助、必要に応じた現地下見同行や連絡補助
-      </div>
-      <div class="service-item">
-        <span class="service-item-icon">→</span>
-        住民登録 / BSN / DigiD / KvK / 銀行 / 保険の順番整理
-      </div>
-      <div class="service-item">
-        <span class="service-item-icon">→</span>
-        申請前の不足確認・到着後30日の行動設計
-      </div>
-      <div class="service-item">
-        <span class="service-item-icon">→</span>
-        来た後の生活立ち上げ相談
-      </div>
-      <div class="service-item">
-        <span class="service-item-icon">→</span>
-        仕事がまだ固まっていない人向けの初動整理
-      </div>
+      <div class="service-item"><span class="service-item-icon">→</span> 現状整理・優先順位つきToDo作成</div>
+      <div class="service-item"><span class="service-item-icon">→</span> ビザ申請準備・必要書類の確認</div>
+      <div class="service-item"><span class="service-item-icon">→</span> ビジネスプラン作成</div>
+      <div class="service-item"><span class="service-item-icon">→</span> 家探しの進め方・応募文面作成補助</div>
+      <div class="service-item"><span class="service-item-icon">→</span> 住民登録 / BSN / DigiD / KvK / 銀行 / 保険の順番整理</div>
+      <div class="service-item"><span class="service-item-icon">→</span> 仕事探し・到着後初動の整理</div>
     </div>
   </div>
 </section>
 
-<!-- ===== 90 DAYS ===== -->
+<!-- ===== SUPPORT SCOPE ===== -->
 <section class="section-sm days-bg">
   <div class="wrap">
-    <span class="label">90-Day Support</span>
-    <h2>90日間で、<br>何が前に進むのか</h2>
+    <span class="label">Support Scope</span>
+    <h2>必要な範囲だけ、<br>一緒に整えます</h2>
 
     <div class="days-box">
-      <div class="days-box-label">主力サポートの進み方</div>
-      <h3>一気に全部やるのではなく、<br>止まりやすい順番から整えていきます。</h3>
-
-      <div class="days-note">
-        ビザ取得の結果を保証するものではありません。<br>
-        90日で「申請前後の実務」と「渡航後の初動」を整理し、移住を現実に近づけるサポートです。
-      </div>
+      <div class="days-box-label">サポート範囲の考え方</div>
+      <h3>無料相談で状況を聞いたうえで、<br>必要なサポートだけをご提案します。</h3>
 
       <ul class="days-list">
         <li>
           <span class="days-arrow">01</span>
-          <div>
-            <strong>1〜30日：</strong><br>
-            現状整理・方向性確認・優先順位づけ。<br>
-            何から始めるべきかを明確にします。
-          </div>
+          <div><strong>方向性整理：</strong><br>移住時期・現在地・不安を確認し、次にやることを明確にします。</div>
         </li>
         <li>
           <span class="days-arrow">02</span>
-          <div>
-            <strong>31〜60日：</strong><br>
-            ビザ準備・ビジネスプラン骨子・家探し方針・必要書類を整理。<br>
-            申請前後で止まりやすい部分を固めます。
-          </div>
+          <div><strong>申請・準備整理：</strong><br>ビザ申請、ビジネスプラン、必要書類、予約・手続きの流れを整理します。</div>
         </li>
         <li>
           <span class="days-arrow">03</span>
-          <div>
-            <strong>61〜90日：</strong><br>
-            住民登録・BSN・KvK・銀行・保険・渡航後30日の動きまで整理。<br>
-            来た後に慌てない状態を目指します。
-          </div>
+          <div><strong>家探し・現地初動：</strong><br>家探し、BSN・KvK・銀行・保険、到着後の動きまで先回りして整えます。</div>
         </li>
       </ul>
     </div>
@@ -980,7 +1053,8 @@
       <div class="profile-body">
         <p class="profile-lead">
           制度の説明だけで終わらず、<br>
-          海外でゼロから暮らしを作る現実まで見て伴走できます。
+          2026年に自分自身でオランダのフリーランスビザを取得した実体験と、<br>
+          海外でゼロから暮らしを作ってきた経験の両方をもとに伴走できます。
         </p>
         <ul class="strength-list">
           <li>
@@ -998,10 +1072,10 @@
             </div>
           </li>
           <li>
-            <div class="str-icon">🍡</div>
+            <div class="str-icon">🍱</div>
             <div class="str-content">
               <p class="str-title">自分で仕事を作った経験がある</p>
-              <p class="str-desc">ワーホリ中、たこ焼き屋をゼロから立ち上げて1年以上運営。「仕事を作る」という動きのリアルを知っている。</p>
+              <p class="str-desc">オーストラリアワーホリ中、たこ焼き屋をゼロから立ち上げて1年以上運営。「仕事を作る」という動きのリアルを知っている。</p>
             </div>
           </li>
           <li>
@@ -1014,12 +1088,34 @@
           <li>
             <div class="str-icon">📋</div>
             <div class="str-content">
-              <p class="str-title">ビザ・タックスリターンを自分でやってきた</p>
-              <p class="str-desc">他国のビザ申請・手続きを自力で処理。制度の話だけでなく、実務の流れを知っている。</p>
+              <p class="str-title">2026年にオランダのフリーランスビザを自分で取得した</p>
+              <p class="str-desc">2026年4月14日に申請し、5月4日に許可取得。制度の概要だけでなく、申請前後の流れ・準備・止まりやすいポイントまで、最新の実体験ベースで整理できる。</p>
             </div>
           </li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MISSION ===== -->
+<section class="section mission-bg">
+  <div class="wrap">
+    <span class="label">Message</span>
+    <h2>Kokiがこのサービスを<br>始めた理由</h2>
+    <div class="mission-card">
+      <p class="mission-lead">
+        海外に出ることは、人生の選択肢を増やすことだと思っています。
+      </p>
+      <p>
+        カナダ、オーストラリア、そしてオランダで暮らす中で、日本の文化・日本食・日本人そのものが、世界で想像以上に受け入れられていると感じてきました。海外を見ることで、自分の可能性が広がるだけでなく、日本の良さや「日本人でよかった」と思える瞬間も増えます。
+      </p>
+      <p>
+        だからこそ、海外生活に興味がある方（特に20〜30代の方）には、オランダに限らず、一度は外の世界を見る選択肢を持ってほしいと思っています。
+      </p>
+      <p>
+        このサービスを始めたのは、オランダに来たい気持ちはあるのに、高額なビザ代行費用や、家探し・仕事探し・現地手続きの不安で諦めてしまう人がいると感じたからです。だから、できるだけ届きやすい金額で、なおかつひとりひとりに寄り添った実務サポートを届けたいと思っています。
+      </p>
     </div>
   </div>
 </section>
@@ -1032,11 +1128,11 @@
     <ul class="who-list">
       <li>
         <span class="who-dot">◎</span>
-        20代後半〜30代後半で、オランダ移住を本気で考えている
+        20代後半〜30代で、海外移住を本気で考えている
       </li>
       <li>
         <span class="who-dot">◎</span>
-        フリーランスビザ・個人事業主ビザで単身移住を考えている
+        フリーランスビザでオランダ移住を考えている
       </li>
       <li>
         <span class="who-dot">◎</span>
@@ -1070,21 +1166,21 @@
     <p class="loss-intro">煽りではありません。実際に起きやすいことです。</p>
     <div class="loss-cards">
       <div class="loss-card">
-        <p class="loss-card-q">住民登録できない物件に入居してしまった場合</p>
-        <p class="loss-card-a">BSNが取れず、銀行・DigiD・保険、すべての手続きが止まる。最初の家選びが、その後の全工程に影響する。</p>
+        <p class="loss-card-q">住民登録できる家がなかなか見つからない場合</p>
+        <p class="loss-card-a">オランダでは、住民登録できる物件探しで何か月も止まることがあります。家が決まらないと、BSN・銀行・DigiD・保険など、その後の生活立ち上げにも影響します。</p>
       </div>
       <div class="loss-card">
-        <p class="loss-card-q">ビザ申請のビジネスプランが不十分だった場合</p>
-        <p class="loss-card-a">審査が長引き、準備期間が大幅に延びる。「ちゃんと書いたつもり」が、通らない水準だったケースは少なくない。</p>
+        <p class="loss-card-q">自分で申請して、書類不備が出た場合</p>
+        <p class="loss-card-a">ビジネスプランや必要書類の不足で確認・追加対応が発生すると、3か月以上足止めになることもあります。「出せば終わり」ではなく、申請前の準備精度が大切です。</p>
       </div>
       <div class="loss-card">
         <p class="loss-card-q">各種手続きの順番が分からないまま進めた場合</p>
-        <p class="loss-card-a">到着後1〜2ヶ月、確認と修正に時間を費やす。「やり直し」は時間だけでなく、精神的なコストも大きい。</p>
+        <p class="loss-card-a">到着後に、何を先にやるべきか分からず、予約・確認・やり直しで1〜2か月を消耗することがあります。時間だけでなく、焦りや不安のコストも大きくなります。</p>
       </div>
     </div>
     <div class="loss-bottom">
       相談の価値は「情報を増やすこと」ではありません。<br>
-      <strong style="color:#fff;">「正しい順番で、無駄なく前に進むこと」</strong>です。
+      <strong style="color:#fff;">「正しい順番で、無駄なく前に進み、止まる回数を減らすこと」</strong>です。
     </div>
   </div>
 </section>
@@ -1098,14 +1194,14 @@
       <div class="flow-step">
         <div class="flow-num">1</div>
         <div class="flow-content">
-          <h4>Instagram DMで「移住相談」と送る</h4>
-          <p>長文は不要です。一言だけで大丈夫です。</p>
+          <h4>Instagram DMまたはメールで連絡する</h4>
+          <p>DMなら「移住相談」と一言だけで大丈夫です。メールの場合は、現在の状況と相談したい内容を簡単に送ってください。</p>
         </div>
       </div>
       <div class="flow-step">
         <div class="flow-num">2</div>
         <div class="flow-content">
-          <h4>簡単なヒアリング（DM）</h4>
+          <h4>簡単なヒアリング（DMまたはメール）</h4>
           <p>移住時期・現在の状況・一番不安なことを確認し、無料相談で見るべきポイントを整理します。</p>
         </div>
       </div>
@@ -1113,14 +1209,14 @@
         <div class="flow-num">3</div>
         <div class="flow-content">
           <h4>30分Zoom無料相談</h4>
-          <p>今どこで止まりやすいか、何を先に進めるべきかを整理します。ここで無理に申し込みを勧めることはありません。</p>
+          <p>今どこで止まりやすいか、何を先に進めるべきか、どのプランが合うかを整理します。ここで無理に申し込みを勧めることはありません。</p>
         </div>
       </div>
       <div class="flow-step">
         <div class="flow-num">4</div>
         <div class="flow-content">
-          <h4>あなたに合うプランを個別提案</h4>
-          <p>ライト・スタンダード・プレミアムの中から、状況に合う進め方と必要なサポート範囲を案内します。</p>
+          <h4>あなたに合う進め方を個別提案</h4>
+          <p>話し合いの結果、今の状況に必要なサポート範囲だけをご提案します。</p>
         </div>
       </div>
       <div class="flow-step">
@@ -1138,75 +1234,110 @@
 <section class="section">
   <div class="wrap">
     <span class="label">Plans</span>
-    <h2>プランは3種類。<br>詳細は相談後に個別案内</h2>
-    <div class="plans-intro">
-      状況によって、合うプランは異なります。だからこそ、まず無料相談で現状を聞いてから、最適なプランを個別に提案します。「どれが自分に合うか」は、相談の中で一緒に整理できます。
-    </div>
+    <h2>プランは3種類。<br>状況に合わせて個別案内</h2>
     <div class="plans">
       <div class="plan-card">
         <div class="plan-header">
           <span class="plan-name">ライト</span>
-          <span class="plan-tagline">まず方向性を整理したい人に</span>
+          <span class="plan-tagline">まず方向性を整理したい方へ</span>
         </div>
-        <p class="plan-desc">何から始めるべきかを整理したい方向けの入口プランです。今の状況確認、優先順位つきToDo整理、移住までの大枠設計を行い、「まず何をやるべきか」が明確な状態をつくります。</p>
+        <p class="plan-best-for">自力で進めたいけれど、最初の順番だけは間違えたくない方向け。</p>
+        <p class="plan-desc">
+          60分Zoom1回で、今の状況・移住時期・優先順位を整理します。資料ベースで全体像を確認し、「次に何をやるべきか」が分かる状態をつくります。
+        </p>
+        <ul class="plan-points">
+          <li>Zoom 60分 × 1回</li>
+          <li>Zoom後1か月フォロー</li>
+          <li>ビザ申請・家探し・到着後初動は資料中心</li>
+          <li>ビジネスプランはテンプレート提供</li>
+        </ul>
       </div>
+
       <div class="plan-card featured">
-        <div class="plan-badge">一番選ばれています</div>
+        <div class="plan-badge">一番おすすめ</div>
         <div class="plan-header">
           <span class="plan-name">スタンダード</span>
-          <span class="plan-tagline">移住前後を一通り伴走する主力プラン</span>
+          <span class="plan-tagline">移住準備を着実に進めたい方へ</span>
         </div>
-        <p class="plan-desc">ビザ準備、家探しの進め方、各種手続きの順番整理、到着後30日の行動設計まで、オランダ移住に必要な実務を順番ごとに一緒に進める主力プランです。一人で進めると止まりやすいポイントを先回りして潰しながら、移住を現実に近づけていきます。</p>
+        <p class="plan-best-for">一人で進める不安を減らし、申請前後の実務を順番に伴走してほしい方向け。</p>
+        <p class="plan-desc">
+          60分Zoom2回に加えて、渡航後ビザ取得までチャットで伴走します。個別ロードマップ、ビジネスプラン添削、家探し、予約・手続き、到着後30日の初動まで順番に整えます。
+        </p>
+        <ul class="plan-points">
+          <li>Zoom 60分 × 2回</li>
+          <li>渡航後ビザ取得までチャットサポート（1日1回返信）</li>
+          <li>個別ロードマップ・ビジネスプラン添削</li>
+          <li>家探しマニュアル、応募文添削、質問対応</li>
+          <li>各種予約・手続きサポート、現地同行1回</li>
+        </ul>
       </div>
+
       <div class="plan-card">
         <div class="plan-header">
           <span class="plan-name">プレミアム</span>
-          <span class="plan-tagline">より手厚く、現地対応まで含めて進めたい方に</span>
+          <span class="plan-tagline">家探し・現地実務まで任せたい方へ</span>
         </div>
-        <p class="plan-desc">スタンダードの内容に加え、優先対応・深い個別伴走を行う上位プランです。家探しでは、条件整理や応募文面の作成補助だけでなく、状況に応じて下見同行やオーナーへの連絡補助など、現地にいる強みを活かした支援も含めて進めます。「制度の整理」だけでなく、「実際に現地で生活を立ち上げるところまで」より近い距離で支えてほしい方向けです。</p>
+        <p class="plan-best-for">現地の家探しや実務対応まで、より近い距離で手厚く支えてほしい方向け。</p>
+        <p class="plan-desc">
+          スタンダードの内容に加えて、優先対応、Zoom3回以上、仕事探し添削、内覧代行2回、動画共有、物件・契約内容確認まで含めた現地特化プランです。
+        </p>
+        <ul class="plan-points">
+          <li>Zoom 60分 × 3回〜（必要時調整）</li>
+          <li>渡航後ビザ取得まで優先チャット対応</li>
+          <li>ビザ申請・ビジネスプラン添削を優先対応</li>
+          <li>仕事探し資料＋レジュメ・応募文添削</li>
+          <li>内覧代行2回、動画共有、物件・契約内容確認</li>
+          <li>現地同行2回</li>
+        </ul>
       </div>
     </div>
     <div class="plans-cta">
-      <p>料金は無料相談後に、状況に合わせて個別案内しています。<br>「どれが自分に合うか分からない」という方こそ、まず無料相談でお話しください。</p>
+      <p>伴走プランの詳細は、無料相談後に状況と必要範囲に応じて個別案内しています。<br>無理な勧誘はしません。まずは「今どこで止まりやすいか」を一緒に整理しましょう。</p>
     </div>
   </div>
 </section>
 
-<!-- ===== DELIVERABLES ===== -->
-<section class="section deliver-bg">
+
+<!-- ===== SINGLE SUPPORT ===== -->
+<section class="section-sm single-bg">
   <div class="wrap">
-    <span class="label">What You Get</span>
-    <h2>サポート後に<br>手元に残るもの</h2>
-
-    <div class="deliver-grid deliver-grid-3">
-      <div class="deliver-item deliver-item-lg">
-        <span class="deliver-check">✓</span>
-        <div>
-          <strong>個別移住ロードマップ</strong><br>
-          今の状況整理・優先順位・進める順番が分かる、あなた専用の実務整理。
+    <span class="label">Single Support</span>
+    <h2>単品サポートも<br>用意しています</h2>
+    <div class="single-intro">
+      移住準備全体ではなく、家探し・仕事探し・到着後の手続きなど、今止まっている「1か所」だけを整理したい方向けのサポートです。
+    </div>
+    <div class="single-grid">
+      <div class="single-card featured-single">
+        <div class="single-card-head">
+          <span class="single-name">仕事探しサポート</span>
+          <span class="single-price">€220</span>
         </div>
+        <p class="single-desc">使う媒体、応募の方向性、応募文テンプレ・添削まで、最初の動き方を整理します。</p>
       </div>
-
-      <div class="deliver-item deliver-item-lg">
-        <span class="deliver-check">✓</span>
-        <div>
-          <strong>申請・準備パック</strong><br>
-          必要書類の整理、ビジネスプラン骨子、家探し方針など、申請前後に必要な準備資料。
+      <div class="single-card">
+        <div class="single-card-head">
+          <span class="single-name">到着後サポート</span>
+          <span class="single-price">€320</span>
         </div>
+        <p class="single-desc">住民登録・BSN・銀行・保険など、到着後の優先順位と初動を整理します。</p>
       </div>
-
-      <div class="deliver-item deliver-item-lg">
-        <span class="deliver-check">✓</span>
-        <div>
-          <strong>渡航後初動パック</strong><br>
-          住民登録・BSN・KvK・銀行・保険・到着後30日の動きを整理した実務資料。
+      <div class="single-card">
+        <div class="single-card-head">
+          <span class="single-name">家探しライト</span>
+          <span class="single-price">€290</span>
         </div>
+        <p class="single-desc">探し方・使うサイト・応募文を整理し、一人で家探しを進めやすい状態をつくります。</p>
+      </div>
+      <div class="single-card">
+        <div class="single-card-head">
+          <span class="single-name">家探しプレミアム</span>
+          <span class="single-price">€690</span>
+        </div>
+        <p class="single-desc">家探しライトの内容に加え、内覧代行または現地同行、動画・現地所見共有まで対応します。</p>
       </div>
     </div>
-
-    <p class="deliver-note">
-      必要以上に資料を増やすのではなく、<br>
-      今の状況に必要なものだけを整理してお渡しします。
+    <p class="single-note">
+      移住準備全体を整理したい場合は、伴走プランでの整理が適しています。どちらが合うかは無料相談で一緒に確認できます。
     </p>
   </div>
 </section>
@@ -1320,7 +1451,7 @@
       <div class="cta-support">
         <span>無料・Zoom相談まで完全無料</span>
         <span>強引な勧誘は一切しません</span>
-        <span>状況整理だけでもOK</span>
+        <span class="email-line">メールでも相談できます：<a class="contact-email" href="mailto:koki.netherlands@gmail.com">koki.netherlands@gmail.com</a></span>
       </div>
     </div>
     <hr class="final-hr">
